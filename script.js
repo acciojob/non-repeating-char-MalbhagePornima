@@ -1,20 +1,16 @@
 function firstNonRepeatedChar(str) {
-var findChar = function(str){
-  var char;
-
-  for(var i = 0; i < str.length; i++){
-    if(str.indexOf(str[i]) === str.lastIndexOf(str[i])){
-      char = str[i];
-      break;
+function firstNonRepeatingCharacter(str) {
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (str.indexOf(char) == i && str.indexOf(char, i + 1) == -1) {
+      return char;
     }
   }
-
-  return char;
+  return "_";
 }
+	
+	
 
-$(document).ready(function(){
-  $('#result').append(findChar("abacdsdbec"));
-})
 }
 const input = prompt("Enter a string");
 alert(firstNonRepeatedChar(input)); 
